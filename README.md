@@ -1,9 +1,10 @@
 # FastAPI Clean Code Microservice
-This is a sample project that demonstrates how to build a microservice using FastAPI framework and PostgreSQL database. It follows the principles of clean architecture and hexagonal design. The project consists of two services: movies and casts, each with its own REST API and database. The services communicate with each other using HTTP requests.
+This is a sample project that demonstrates how to build a microservice using FastAPI framework and sqlalchemy.
+It follows the principles of clean architecture and hexagonal design. The project consists of one simple customer service.
 
 ## Features
-- CRUD operations for movies and casts
-- Pagination, filtering, and sorting for movies
+- CRUD operations for customers
+- Pagination, filtering, and sorting for customers
 - Validation and error handling
 - Unit testing and code coverage
 - Docker and docker-compose support
@@ -17,7 +18,8 @@ This is a sample project that demonstrates how to build a microservice using Fas
 - Docker and docker-compose
 - Installation
 
-## Clone the repository and install the dependencies using pipenv:
+### Clone the repository and install the dependencies using pipenv:
+
 ```
 git clone https://github.com/sushant-at-nitor/fastapi-clean-code-microservice.git
 cd fastapi-clean-code-microservice
@@ -39,6 +41,9 @@ API_HOST=0.0.0.0
 ## Usage
 To run the application locally, use the following command:
 ```
+uvicorn main:app --reload
+```
+```
 pipenv run uvicorn main:app --reload
 ```
 To run the application using docker-compose, use the following command:
@@ -46,9 +51,7 @@ To run the application using docker-compose, use the following command:
 docker-compose up -d --build
 ```
 
-To access the API documentation, visit http://localhost:8000/docs for movies service and http://localhost:8001/docs for casts service.
-
-To access both services using a single host address, visit http://localhost/api/movies and http://localhost/api/casts.
+- To access the API documentation, visit http://localhost:8000/docs
 
 ## Testing
 To run the tests and generate the coverage report, use the following command:
